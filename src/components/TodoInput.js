@@ -6,21 +6,24 @@ export default class TodoInput extends Component{
         return(
             <div className="card card-body my-3">
                 <form onSubmit={handleSubmit}>
-               <div className="input-group">
+                   <div className="input-group">
                    <div className="input-group-prepend">
                        <div className="input-group-text bg-primary
                        text-white">
                         <i className="fas fa-book"/>
                        </div>
                    </div>
-                   <input type="text"
+                   <input 
+                   type="text"
+                   required
                    className="form-control text-capitalize"
                    placeholder="Add Task"
                    value={item}
                    onChange={handleChange}/>
-                </div>   
+                 </div>   
             <button type="submit" 
-            className="btn btn-block btn-primary mt-3">
+            disabled={item?false:true}
+            className={editItem===true ? "btn btn-block btn-secondary mt-3" : "btn btn-block btn-primary mt-3"}>
                 Add Task</button>     
                 </form>
             </div>
