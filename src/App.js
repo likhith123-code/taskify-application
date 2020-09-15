@@ -1,15 +1,22 @@
 import React from 'react';
 import './App.css';
-import ObjArrHook from './components/hooks1';
-import EffectsHook from './components/useEffect-condition'
+import uuid from 'uuid';
+import TodoList from './components/TodoList';
+import TodoInput from './components/TodoInput';
 
 
 function App() {
   return (
     <div className="App">
-      <ObjArrHook/>
-      <hr/>
-      <EffectsHook/>
+     <h1>Hello </h1>
+     <div className="container">
+       <div className="row">
+         
+         <TodoInput/>
+         <TodoList/>
+         
+       </div>
+     </div>
     </div>
   );
 }
