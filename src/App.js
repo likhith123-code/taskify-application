@@ -26,12 +26,6 @@ class App extends Component{
     const json = JSON.stringify(this.state.items)
     localStorage.setItem('items', json)
   }
-
-
-
-
-
-}
   handleSubmit=(e)=>{
     e.preventDefault();
     const newitem={
