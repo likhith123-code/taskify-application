@@ -23,7 +23,7 @@ export default class TodoInput extends Component{
                  </div>   
             <button type="submit" 
             disabled={item?false:true}
-            className={editItem===true ? "btn btn-block btn-secondary mt-3" : "btn btn-block btn-primary mt-3"}>
+            className={editItem? "btn btn-block btn-secondary mt-3" : "btn btn-block btn-primary mt-3"}>
                 Add Task</button>     
                 </form>
             </div>
