@@ -23,7 +23,7 @@ class App extends Component{
  }
 componentDidMount(){
   if (localStorage.getItem('data')) {
-    newData =  JSON.parse(localStorage.getItem('new'));
+    const newData =  JSON.parse(localStorage.getItem('new'));
     this.setState({
       items:newData
   })
