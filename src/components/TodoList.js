@@ -7,6 +7,7 @@ export default class TodoList extends Component{
         return(
            <ul className="list-group my-5">
             <h3 className="text-capitalize text-center">Pending Tasks</h3>
+            <div>
             {
                items.map(item=>{
                    return(
@@ -19,6 +20,8 @@ export default class TodoList extends Component{
                    );
                })
             }
+            </div>
+          
             <button
             type="button" 
             className="btn btn-danger btn-block text-uppercase mt-5"

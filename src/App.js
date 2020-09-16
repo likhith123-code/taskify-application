@@ -18,9 +18,12 @@ class App extends Component{
     });
   }
   componentDidMount() {
-    const json = localStorage.getItem('items') || null;
-    const item = JSON.parse(json)
-    this.setState(() => ({ items:item }))
+    if(localStorage.getItem('items')){
+      const json = localStorage.getItem('items');
+      const item = JSON.parse(json)
+     this.setState(() => ({ items:item }))
+    }
+    
   }
   componentDidUpdate(prevProps, prevStates){
     const json = JSON.stringify(this.state.items)
