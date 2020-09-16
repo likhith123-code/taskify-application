@@ -17,17 +17,19 @@ class App extends Component{
       item:e.target.value
     });
   }
-  componentDidUpdate(){
-    const json=JSON.stringify(this.state.items);
-    localStorage.setItem('data',json);
- }
-componentDidMount(){
-  if (localStorage.getItem('data')) {
-    const newData =  JSON.parse(localStorage.getItem('new'));
-    this.setState({
-      items:newData
-  })
-}
+  componentDidMount() {
+    const json = localStorage.getItem('items') || null;
+    const item = JSON.parse(json)
+    this.setState(() => ({ items:item }))
+  }
+  componentDidUpdate(prevProps, prevStates){
+    const json = JSON.stringify(this.state.items)
+    localStorage.setItem('items', json)
+  }
+
+
+
+
 
 }
   handleSubmit=(e)=>{
