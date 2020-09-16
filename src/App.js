@@ -22,10 +22,13 @@ class App extends Component{
     localStorage.setItem('data',json);
  }
 componentDidMount(){
-    const task = JSON.parse(localStorage.getItem('data')) || null;
+  if (localStorage.getItem('data')) {
+    newData =  JSON.parse(localStorage.getItem('new'));
     this.setState({
-        items:task
-    })
+      items:newData
+  })
+}
+
 }
   handleSubmit=(e)=>{
     e.preventDefault();
