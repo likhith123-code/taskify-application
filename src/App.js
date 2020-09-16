@@ -17,6 +17,16 @@ class App extends Component{
       item:e.target.value
     });
   }
+  componentDidUpdate(){
+    const json=JSON.stringify(this.state.items);
+    localStorage.setItem('data',json);
+ }
+componentDidMount(){
+    const task = JSON.parse(localStorage.getItem('data')) || null;
+    this.setState({
+        items:task
+    })
+}
   handleSubmit=(e)=>{
     e.preventDefault();
     const newitem={
